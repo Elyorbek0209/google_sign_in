@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+
 
 
 void main() => runApp(MyApp());
@@ -62,18 +65,237 @@ class _GoogleSignAppState extends State<GoogleSignApp> {
 
               child: Image.network(
                 
-                "https://images.unsplash.com/flagged/photo-1557296126-ae91316e5746?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+                "https://images.unsplash.com/photo-1553882809-a4f57e59501d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
                 
 
-                qfit: BoxFit.fill,
+                fit: BoxFit.fill,
 
-                color: Color.fromRGBO(255, 255, 255, 0.6),
+                // color: Color.fromRGBO(255, 255, 255, 0.6),
 
                 colorBlendMode: BlendMode.modulate  
               
               ),
-
               
+
+            ),
+
+
+
+            Column(
+
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+
+                SizedBox(height: 10.0),
+
+
+                //Google
+                Container(
+
+                  width: 280.0,
+
+                  child: Align(
+
+                    alignment: Alignment.center,
+
+                    child: RaisedButton(
+
+                      shape: RoundedRectangleBorder(
+
+                        borderRadius: BorderRadius.circular(30.0),
+
+                      ),
+
+
+                      color: Color(0xffffffff),
+
+                      child: Row(
+
+                        mainAxisAlignment: MainAxisAlignment.start,
+
+                        children: <Widget>[
+
+                          Icon(
+                            
+                            FontAwesomeIcons.google,
+                            
+                            color: Color(0xffcE107C),
+                          
+                          ),
+
+                          SizedBox(width: 10.0),
+
+                          Text(
+                            
+                            'Sign in with Google',
+                            
+                            style: TextStyle(
+
+                              color: Colors.black,
+
+                              fontSize: 18.0,
+
+                            ),
+
+                          ),
+
+                        ],
+
+                      ),
+
+
+                      onPressed: (){
+
+                        //
+
+                      },
+
+                    ),
+
+                  ),
+
+                ),
+
+
+                //Facebook
+                Container(
+
+                  width: 280.0,
+
+                  child: Align(
+
+                    alignment: Alignment.center,
+
+                    child: RaisedButton(
+
+                      shape: RoundedRectangleBorder(
+
+                        borderRadius: BorderRadius.circular(30.0),
+
+                      ),
+
+
+                      color: Color(0xffffffff),
+
+                      child: Row(
+
+                        mainAxisAlignment: MainAxisAlignment.start,
+
+                        children: <Widget>[
+
+                          Icon(
+                            
+                            FontAwesomeIcons.facebookF,
+                            
+                            color: Color(0xff01579B),
+                          
+                          ),
+
+                          SizedBox(width: 10.0),
+
+                          Text(
+                            
+                            'Sign in with Facebook',
+                            
+                            style: TextStyle(
+
+                              color: Colors.black,
+
+                              fontSize: 18.0,
+
+                            ),
+
+                          ),
+
+                        ],
+
+                      ),
+
+
+                      onPressed: (){
+
+                        //
+
+                      },
+
+                    ),
+
+                  ),
+
+                ),
+
+
+
+                Container(
+
+                  width: 280.0,
+
+                  child: Align(
+
+                    alignment: Alignment.center,
+
+                    child: RaisedButton(
+
+                      shape: RoundedRectangleBorder(
+
+                        borderRadius: BorderRadius.circular(30.0),
+
+                      ),
+
+
+                      color: Color(0xffffffff),
+
+                      child: Row(
+
+                        mainAxisAlignment: MainAxisAlignment.start,
+
+                        children: <Widget>[
+
+                          Icon(
+                            
+                            FontAwesomeIcons.solidEnvelope,
+                            
+                            color: Color(0xffD50000),
+                          
+                          ),
+
+                          SizedBox(width: 10.0),
+
+                          Text(
+                            
+                            'Sign in with Email',
+                            
+                            style: TextStyle(
+
+                              color: Colors.black,
+
+                              fontSize: 18.0,
+
+                            ),
+
+                          ),
+
+                        ],
+
+                      ),
+
+
+                      onPressed: (){
+
+                        //
+
+                      },
+
+                    ),
+
+                  ),
+
+                ),
+
+
+
+              ],
 
             ),
 
@@ -85,6 +307,36 @@ class _GoogleSignAppState extends State<GoogleSignApp> {
 
     );
   }
+}
+
+
+
+
+
+//---Here Model Class Below ---
+
+class UserDetails {
+
+  final String providerDetails;
+
+  final String userName;
+
+  final String photoUrl;
+
+  final String userEmail;
+
+  final List<ProviderDetails> providerData;
+
+  UserDetails(this.providerDetails,this.userName, this.photoUrl,this.userEmail, this.providerData);
+}
+
+
+class ProviderDetails {
+
+  ProviderDetails(this.providerDetails);
+
+  final String providerDetails;
+
 }
 
 
